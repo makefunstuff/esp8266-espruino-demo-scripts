@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "acorn": "^3.0.4",
+    "bluebird": "^3.3.3",
     "espruino": "0.0.13"
   }
 }
