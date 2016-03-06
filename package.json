@@ -1,0 +1,15 @@
+{
+  "name": "esp8266-espruino-demo-scripts",
+  "version": "0.0.1",
+  "description": "Demo scripts to play with espruino and esp8266 wifi module",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plugatariov Iurii",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^3.0.4",
+    "espruino": "0.0.13"
+  }
+}
