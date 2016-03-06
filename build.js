@@ -6,17 +6,16 @@ var filename = './helloworld.js';
 
 new Promise(function(resolve, reject) {
   esp.init(function() {
-    resolve(Espruino)
+    resolve(Espruino);
   })
 })
 .then(function(Espruino) {
-  Espruino.Config.BAUD_RATE = "115200"
+  Espruino.Config.BAUD_RATE = "115200";
+  Espruino.Config.RESET_BEFORE_SEND = true;
 })
 .then(function() {
-  esp.sendFile(port, filename, function() {
-    esp.expr(port, "save()", function(result) {
-      console.log('file hase been uploaded');
-      console.log(result);
-    })
+  esp.expr(port, "reset()", function(result) {
+    console.log('file hase been uploaded');
+    console.log(result);
   })
-})
+});

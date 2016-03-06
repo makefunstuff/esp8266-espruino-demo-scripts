@@ -2,9 +2,8 @@
   "name": "esp8266-espruino-demo-scripts",
   "version": "0.0.1",
   "description": "Demo scripts to play with espruino and esp8266 wifi module",
-  "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "espruino -p /dev/cu.SLAB_USBtoUART -b 115200 helloworld.js && espruino -p /dev/cu.SLAB_USBtoUART -b 115200 -e \"save()\""
   },
   "author": "Plugatariov Iurii",
   "license": "MIT",
