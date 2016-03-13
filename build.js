@@ -2,10 +2,7 @@ var esp = require('espruino');
 var Promise = require('bluebird');
 
 var port = '/dev/cu.SLAB_USBtoUART';
-var filename = './http.js';
-
-// temporary hack due to avoid crash caused by espruino lib
-window = false;
+var filename = process.argv[2] || './helloworld.js';
 
 new Promise(function(resolve, reject) {
   esp.init(function() {
