@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "Demo scripts to play with espruino and esp8266 wifi module",
   "scripts": {
-    "build": "espruino -p /dev/cu.SLAB_USBtoUART -b 115200 http.js && espruino -p /dev/cu.SLAB_USBtoUART -b 115200 -e \"save()\""
+    "build": "node build.js"
   },
   "author": "Plugatariov Iurii",
   "license": "MIT",
   "dependencies": {
     "acorn": "^3.0.4",
     "bluebird": "^3.3.3",
-    "espruino": "0.0.13"
+    "espruino": "0.0.14"
   }
 }

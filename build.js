@@ -2,7 +2,10 @@ var esp = require('espruino');
 var Promise = require('bluebird');
 
 var port = '/dev/cu.SLAB_USBtoUART';
-var filename = './helloworld.js';
+var filename = './http.js';
+
+// temporary hack due to avoid crash caused by espruino lib
+window = false;
 
 new Promise(function(resolve, reject) {
   esp.init(function() {
@@ -14,8 +17,7 @@ new Promise(function(resolve, reject) {
   Espruino.Config.RESET_BEFORE_SEND = true;
 })
 .then(function() {
-  esp.expr(port, "reset()", function(result) {
-    console.log('file hase been uploaded');
-    console.log(result);
-  })
-});
+  esp.sendFile(port, filename, function() {
+    console.log('[INFO] Build Success!');
+  });
+})
